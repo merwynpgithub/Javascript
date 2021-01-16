@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List Grid View</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			width: 95%;
+			margin: auto;
+		}
+		#col1, #col2, #col3, #col4 {
+			float: left;
+			width: 100%;
+			box-sizing: border-box;
+			height: 100px;
+			font-size: 2em;
+		}
+		button {
+			margin-top: 10px;
+			margin-bottom: 25px;
+			font-size: 1.5em;
+			height: 50px;
+		}
+		#col1 {
+			background-color: rgb(171, 166, 166);
+		}
+		#col2 {
+			background-color: rgb(182, 179, 179);
+		}
+		#col3 {
+			background-color: rgb(193, 190, 190);
+		}
+		#col4 {
+			background-color: rgb(210, 207, 207);
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<button id="list1">List</button>
+		<button id="grid1">Grid</button>	
+	</div>
+	<div id="col1">Column 1</div>
+	<div id="col2">Column 2</div>
+	<div id="col3">Column 3</div>
+	<div id="col4">Column 4</div>
+<script>
+	function convertToGrid(event) {
+		var x1 = document.getElementById('col1');
+		var x2 = document.getElementById('col2');
+		var x3 = document.getElementById('col3');
+		var x4 = document.getElementById('col4');
+		x1.style.width = '50%';
+		x2.style.width = '50%';
+		x3.style.width = '50%';
+		x4.style.width = '50%';
+	}
+	function convertToList(event) {
+		var x1 = document.getElementById('col1');
+		var x2 = document.getElementById('col2');
+		var x3 = document.getElementById('col3');
+		var x4 = document.getElementById('col4');
+		    x1.style.width = '100%';
+			x2.style.width = '100%';
+			x3.style.width = '100%';
+			x4.style.width = '100%';
+			
+		}
+	document.querySelector('#grid1').addEventListener('click', convertToGrid)
+	document.querySelector('#list1').addEventListener('click', convertToList)
+</script>
+</body>
+</html>

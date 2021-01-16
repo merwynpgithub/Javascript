@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		div {
+			width: 50%;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+			}
+		div.weight {
+			float: left;
+			height: 80px;
+		}
+		input {
+			border: 1px solid black;
+			width: 327.5px;
+		}
+		button {
+			margin-left: 100px;
+		}	
+		
+	</style>
+</head>
+<body>
+	<div class="weight">
+		<div>Pound
+			<button>Convert</button>
+		</div>
+		<div><input type="number" id="pounds"></div>
+		<div id="answer_pound"></div>		
+	</div>
+
+	<div class="weight">
+		<div>Kilogram</div>
+		<div><input type="number" id="kilos"></div>
+		<div id="answer_kilo"></div>
+	</div>
+
+	<div class="weight">
+		<div>Ounce</div>
+		<div><input type="number" id="ounces"></div>
+		<div id="answer_ounce"></div>
+	</div>
+
+	<div class="weight">
+		<div>Gram</div>
+		<div><input type="number" id="grams"></div>
+		<div id="answer_gram"></div>
+	</div>
+	<div class="weight">
+		<div>Stone</div>
+		<div><input type="number" id="stones"></div>
+		<div id="answer_stone"></div>
+	</div>
+<script>
+	function weightConversionOfPound(event) {
+		var weight_pound = document.getElementById('pounds').value;
+		var weight_kilo = weight_pound*0.45;
+		var weight_ounce = weight_pound*16;
+		var weight_gram = weight_pound*450;
+		var weight_stone = weight_pound*0.071;
+		document.getElementById('answer_kilo').innerHTML = weight_kilo.toFixed(3);
+		document.getElementById('kilos').style.display = 'none';
+		document.getElementById('answer_kilo').style.border = '1px solid black';
+		document.getElementById('answer_ounce').innerHTML = weight_ounce.toFixed(3);
+		document.getElementById('ounces').style.display = 'none';
+		document.getElementById('answer_ounce').style.border = '1px solid black';
+		document.getElementById('answer_gram').innerHTML = weight_gram.toFixed(3);
+		document.getElementById('grams').style.display = 'none';
+		document.getElementById('answer_gram').style.border = '1px solid black';
+		document.getElementById('answer_stone').innerHTML = weight_stone.toFixed(3);
+		document.getElementById('stones').style.display = 'none';
+		document.getElementById('answer_stone').style.border = '1px solid black';
+	}
+	function weightConversionOfKilo(event) {
+		var weight_kilo = document.getElementById('kilos').value;
+		var weight_pound = weight_kilo/0.45;
+		var weight_ounce = weight_kilo*16/0.45;
+		var weight_gram = weight_kilo*1000;
+		var weight_stone = weight_kilo*0.157;
+		document.getElementById('answer_pound').innerHTML = weight_pound.toFixed(3);
+		document.getElementById('pounds').style.display = 'none';
+		document.getElementById('answer_pound').style.border = '1px solid black';
+		document.getElementById('answer_ounce').innerHTML = weight_ounce.toFixed(3);
+		document.getElementById('ounces').style.display = 'none';
+		document.getElementById('answer_ounce').style.border = '1px solid black';
+		document.getElementById('answer_gram').innerHTML = weight_gram.toFixed(3);
+		document.getElementById('grams').style.display = 'none';
+		document.getElementById('answer_gram').style.border = '1px solid black';
+		document.getElementById('answer_stone').innerHTML = weight_stone.toFixed(3);
+		document.getElementById('stones').style.display = 'none';
+		document.getElementById('answer_stone').style.border = '1px solid black';
+	}
+	document.querySelector("button").addEventListener("click", weightConversionOfPound)
+	document.querySelector("#kilos").addEventListener("blur", weightConversionOfKilo)
+</script>
+</body>
+</html>
