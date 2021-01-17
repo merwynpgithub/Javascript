@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Expanding Grid</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		button {
+			height: 150px;
+			width: 33%;
+			font-size: 24px;
+			color: white;
+			cursor: pointer;
+		}
+
+		#boxGreen {
+			background-color: green;
+			height: 150px;
+			width: 33%;
+			font-size: 24px;
+			float: left;
+		}
+		a {
+			color: white;
+			font-size: 24px;
+			text-decoration: none;
+			position: relative;
+			top: 65px;
+			left: 175px;
+
+		}
+		button#box2 {
+			background-color: blue;
+		}
+		button#box3 {
+			background-color: red;
+		}
+		div#boxColor {
+			color: white;
+			display: none;
+			width: 100%;
+			margin:auto;
+			border: 1px solid black;
+			margin-top: 25px;
+		}
+		p {
+			font-family: Verdana, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id="boxGreen">
+		<a href="#boxColor" id="box1">Box 1</a>
+	</div>
+	<!-- <button id="box1">Box 1</button> -->
+	<button id="box2">Box 2</button>
+	<button id="box3">Box 3</button>
+	<div id="boxColor">
+		<h1>Box</h1>
+		<p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret 
+		deseruisse ad
+		</p>
+	</div>
+<script>
+	function showGreen(event) {
+		var x = document.getElementById('boxColor');
+		// if (x.style.display === "none") {
+		    x.style.display = "block";
+		  // } else {
+		  //   x.style.display = "none";
+		  // }
+		x.style.backgroundColor = 'green';
+	}
+	function showBlue(event) {
+		var x = document.getElementById('boxColor');
+		// if (x.style.display === "none") {
+		    x.style.display = "block";
+		  // } else {
+		  //   x.style.display = "none";
+		  // }
+		x.style.backgroundColor = 'blue';
+	}
+	function showRed(event) {
+		var x = document.getElementById('boxColor');
+		// if (x.style.display === "none") {
+		    x.style.display = "block";
+		  // } else {
+		  //   x.style.display = "none";
+		  // }
+		x.style.backgroundColor = 'red';
+	}
+	document.querySelector('#box1').addEventListener('click', showGreen)
+	document.querySelector('#box2').addEventListener('click', showBlue)
+	document.querySelector('#box3').addEventListener('click', showRed)
+</script>
+</body>
+</html>
