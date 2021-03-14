@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Testimonials</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: Arial, Helvetica, sans-serif;}
+        .testimonial {
+            padding: 16px;
+            width: 90%;
+            margin: 15px;
+            max-height: 250px;
+            background: #b3acac;
+            border: 1px solid #868383;
+            
+        }
+        
+        .testimonial img {            
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        .idPhoto, .idInfo{text-align: center;}
+        p span {
+            font-size: 1.5em;
+            padding-right: 25px;
+        }
+        @media (min-width: 600px) {
+            .testimonial {display: flex;}
+            .idPhoto {flex: 1;text-align: left;}
+            .idInfo {flex: 5;text-align: left;}
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Testimonials</h1>
+    <p>Responsive Testimonials</p>
+    <div class="testimonial">
+        <div class="idPhoto">
+            <img src="images/photoId1.jpg" alt="PhotoId">
+        </div>
+        <div class="idInfo">
+            <p><span>Chris Fox</span> CEO at Mighty Schools</p>
+            <p>John Doe saved us from a web disaster.</p>
+        </div>
+    </div>
+    <div class="testimonial">
+        <div class="idPhoto">
+            <img src="images/photoId1.jpg" alt="PhotoId">
+        </div>
+        <div class="idInfo">
+            <p><span>Rebecca Flex</span> CEO at Company</p>
+            <p>No one is better than John Doe.</p>
+        </div>
+    </div>
+    
+</body>
+</html>

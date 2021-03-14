@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter List</title>
+    <style>
+        ul {
+            padding-left: 0;
+        }
+        li {
+            list-style: none;
+            margin-left: 0;            
+        }
+        a {
+            text-decoration: none;           
+        }
+        a:hover {
+            color: black;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h2>My Phonebook</h2>
+    <input id="filter" type="text" placeholder="Search for name...">
+    <ul id="myUl">
+        <li>Adele</li>
+        <li>Agnes</li>
+        <li>Billy</li>
+        <li>Bob</li>
+        <li>Calvin</li>
+        <li>Christina</li>
+        <li>Cindy</li>
+      </ul>
+      <script>
+          function filterFunc(){
+              var input = document.getElementById("filter");
+              var ul = document.getElementById("myUl");
+              var filter = input.value.toUpperCase();
+              var li = ul.getElementsByTagName("li");
+            //   console.log(li);
+            //   console.log(filter);
+            //   var text = li[0].getElementsByTagName("a")[0];
+            //   console.log(li[0]);                
+              var text, i, txtupper;
+              for (i = 0; i < li.length; i++) {
+                  text = li[i].textContent;
+                //   console.log(text);
+                //   console.log(text);                  
+                  txtupper = text.toUpperCase();//for converting the list to upper
+                  if (txtupper.indexOf(filter) > -1) {
+                      li[i].style.display = "block";
+                  }
+                  else {
+                    li[i].style.display = "none";
+                  }
+              }
+            }
+          document.getElementById("filter").addEventListener("keyup", filterFunc);
+      </script>
+    
+</body>
+</html>

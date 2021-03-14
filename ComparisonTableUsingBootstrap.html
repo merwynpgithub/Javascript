@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Table</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 10px;
+        }
+        
+        h1, p, td, th {
+            text-align: center;
+        }
+        table {
+            width: 800px;
+            margin: auto;
+            
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        tr:nth-child(even) {
+            background-color: #f3f3f3;
+        }
+        th:first-child, td:first-child {
+        text-align: left;
+        }
+        td {
+            padding: 15px;
+        }
+        .glyphicon-remove {
+            color: red;
+        } 
+        .glyphicon-ok {
+            color: green;
+        } 
+    </style>
+</head>
+<body>
+    <h1>How TO - Comparison Table</h1>
+    <p>Learn how to create a comparison table with CSS.</p>
+    <table>
+        <tr>
+            <th>Features</th>
+            <th>Basic</th>
+            <th>Pro</th>
+        </tr>
+        <tr>
+            <td>Sample Text</td>
+            <td><span class="glyphicon glyphicon-ok"></span></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+        </tr>
+        <tr>
+            <td>Sample Text</td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+        </tr>
+        <tr>
+            <td>Sample Text</td>
+            <td><span class="glyphicon glyphicon-ok"></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+        </tr>
+        <tr>
+            <td>Sample Text</td>
+            <td><span class="glyphicon glyphicon-ok"></td>
+            <td><span class="glyphicon glyphicon-ok"></td>
+        </tr>
+    </table>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</body>
+</html>

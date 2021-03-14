@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display text when Checkbox is Checked</title>
+    <style>
+        #showUs {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p>Display some text when the checkbox is checked:</p>
+    <label for="checkbox">CheckBox</label>
+    <input type="checkbox" name="checkbox" id="checkbox">
+    <p id="showUs">Show the text</p>
+    <script>
+        var x = document.querySelector("#checkbox");
+        var y = document.querySelector("#showUs");
+        function myFunc(event) {
+            
+            if (x.checked == true) {
+                y.style.display = "block";
+            }
+            else {
+                y.style.display = "none";
+
+            }
+            
+        }
+        x.addEventListener("click", myFunc)
+    </script>
+</body>
+</html>

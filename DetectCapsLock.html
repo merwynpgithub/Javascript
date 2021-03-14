@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect Caps Lock</title>
+    <style>
+        #warn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Detect if Caps Lock is On</h2>
+    <input id="name" name="name" placeholder="Type text here">
+    <p id="warn">Warning Caps Lock</p>
+    <script>
+        var x = document.querySelector("#name");
+        var y = document.querySelector("#warn");
+        x.addEventListener("keyup", function(e) {
+            if (e.getModifierState("CapsLock")) {
+                // y.innerHTML = "Caps Lock is on";
+                y.style.display = "block";
+            }
+            else {
+                // y.innerHTML = "";
+                y.style.display = "none";
+            }
+        })
+    </script>
+    
+</body>
+</html>

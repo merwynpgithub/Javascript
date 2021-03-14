@@ -1,0 +1,24 @@
+https://codeburst.io/javascript-map-vs-foreach-f38111822c0f
+JavaScript — Map vs. ForEach
+
+forEach() — executes a provided function once for each array element.
+map() — creates a new array with the results of calling a provided function on every element in the calling array.
+
+For Each
+let arr = [1, 2, 3, 4, 5];
+arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});
+// arr = [2, 4, 6, 8, 10]
+
+Map:
+let doubled = arr.map(num => {
+    return num * 2;
+});
+// doubled = [2, 4, 6, 8, 10]
+
+
+The Array.from() static method creates a new, shallow-copied Array instance from an array-like or iterable object.
+
+console.log(Array.from('foo'));
+//Array ["f", "o", "o"]

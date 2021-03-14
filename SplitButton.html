@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Button</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0%;
+            padding: 0%;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown button {
+            background-color: blue;
+            color: white;
+            font-size: 1.5em;
+            padding: 5px;
+        }
+        .dropdown ul {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            list-style-type: none;
+            padding-left: 10px;
+            background-color: #f3f3f3;
+            color: black;                        
+        }
+        .dropdown button:hover {
+            cursor: pointer;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h2>Split Button Dropdowns  
+    </h2>
+    <p>Move the mouse over the arrow icon to open the dropdown menu.</p>
+    <div class="dropdown">
+        <button>Button</button>
+        <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+        </ul>
+    </div>
+    <script>
+        var x = document.querySelector("ul");
+        var y = document.querySelector("button");
+        y.addEventListener("mouseover", function(event) {
+                x.style.display = "block";        
+                       
+        })
+        y.addEventListener("mouseout", function(event) {
+                x.style.display = "none";        
+                       
+        })
+    </script>
+    
+    
+</body>
+</html>

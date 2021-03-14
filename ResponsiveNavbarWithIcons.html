@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Icons</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/ResponsiveNavbarWithIcons.css">
+</head>
+<body>
+    <div class="container-2" id="topNav">
+        <a href="#"><span class="glyphicon glyphicon-home"></span>Home</a>
+        <a href="#"><span class="glyphicon glyphicon-search"></span>Search</a>
+        <a href="#"><span class="glyphicon glyphicon-envelope"></span>Contact</a>
+        <a href="#"><span class="glyphicon glyphicon-user"></span>Login</a>
+        <a href="#" class="icon" onclick="myFunction();">
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </a>
+    </div>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script>
+        var myId = document.getElementById("topNav")
+        function myFunction() {
+            if (myId.className === "container-2") {
+            myId.classList.add("responsive")
+        }
+        else {
+            myId.classList.remove("responsive");
+        }
+        }
+    </script>
+    
+</body>
+</html>

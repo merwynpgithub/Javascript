@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree View</title>
+</head>
+<style>
+    li {
+        list-style-type: none;
+    }
+    .input {
+        color: rgb(14, 34, 126);
+        cursor: pointer;
+        font-weight: 900;
+    }
+    .nestedul {
+        display: none;
+    }
+    .active {
+        display: block;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<body>
+    <h1>Tree View</h1>
+    <p>A tree view represents a hierarchical view of information, where
+        each item can have a number of subitems.</p>
+    <p>Click on the arrow(s) to open or close the tree branches.</p>
+    <ul>
+        <li>Water</li>
+        <li>Coffee</li>
+        <li class="input">Tea</li>
+        <ul class="nestedul">
+            <li>Black Tea</li>
+            <li>White Tea</li>
+            <li class="input">Green Tea</li>
+            <ul class="nestedul">
+                <li>Sencha</li>
+                <li>Gyokuro</li>
+                <li>Matcha</li>
+                <li>Pi Lo Chun</li>
+            </ul>
+        </ul>
+    </ul>
+
+    <!-- <script>
+        var input = document.getElementsByClassName("input");
+        var nestedul = document.getElementsByClassName("nestedul");
+        
+        
+        // function showtext() {
+        //     if (input[0].checked === true) {
+        //     // nestedul[0].style.display = "block";
+        //     nestedul[0].classList.add("active");            
+        // }
+        // else {
+        //     // nestedul[0].style.display = "none";
+        //     nestedul[0].classList.remove("active");
+        // }
+        // }
+        // input[0].addEventListener("click", showtext);
+
+        // console.log(input.length);
+
+        
+
+        
+        
+        
+        var i;
+        for (i = 0; i < 2; i++) {
+            
+            console.log("i = " + i);
+            console.log(input[i].checked);
+
+            input[i].addEventListener("click", function() {
+                // var one = this.parentElement;
+                // console.log("one = " + one);
+                // var qry = one.querySelector(".nestedul");
+                // console.log("query = " + qry);
+                // var three = qry.classList;
+                // console.log("three = " + three);
+                // three.toggle("active");
+
+                console.log(this);
+                console.log(this.parentElement);
+                console.log(this.parentElement.querySelector(".nestedul"));
+                console.log(this.parentElement.querySelector(".nestedul").classList);
+                this.parentElement.querySelector(".nestedul").classList.toggle("active");
+            });
+        }
+
+    </script> -->
+    <script src="js/TreeView.js"></script>
+
+</body>
+
+</html>

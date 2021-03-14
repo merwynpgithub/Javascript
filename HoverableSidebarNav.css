@@ -1,0 +1,22 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+.sidebar a {
+    position: absolute;
+    left: -80px;
+    width: 100px;
+    padding: 16px;
+    text-decoration: none;
+    background-color: #f44336;
+    color: white;
+    transition: 0.3s;
+    border-radius: 0 5px 5px 0;
+}
+#about {top: 20px;}
+#blog {top: 80px;}
+#project {top: 140px}
+#contact {top: 200px;}
+.note {
+    margin-left: 160px;
+}
+.sidebar a:hover {
+    left: 0px;
+}

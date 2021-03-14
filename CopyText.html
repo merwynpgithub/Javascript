@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input id="copyText" type="text" placeholder="Text to copy...">
+        <button>Copy</button>
+        <script>
+            function copytext() {
+                var copier = document.querySelector("#copyText");
+                copier.select();
+                document.execCommand("copy");
+            }
+            document.querySelector("button").addEventListener("click", copytext)
+        </script>
+    </body>
+</html>

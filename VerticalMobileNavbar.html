@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                overflow: hidden;
+            }
+            .container {
+                position: relative;
+                width: 70%;
+                margin: auto;                
+                height: 500px;
+                background-color: #E3E3E2;
+            }
+            .topnav {
+                position: relative;
+                /* width: 100%;                
+                height: 50px; */
+                overflow: hidden;
+                background-color: #3FBF70;
+            }
+            .topnav a {                
+                color: white;
+                padding: 14px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: 1.5em;
+                margin-top: 0%;
+            }
+            .topnav a.btn {
+                background-color: black;
+                position: absolute;
+                /* display: block; */
+                top: 0%;
+                right: 0%;
+                margin-top: 0%;                            
+            }
+            .topnav a:hover {
+                background-color: rgb(184, 183, 174);
+                color: black;
+            }
+            .topnav #topLink {
+                display: none;
+            }
+           
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="topnav">
+                <a href="#" class="logo">Logo</a>
+                <div id="topLink">
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Classified</a>
+                </div>
+                <a href="javascript:void(0)" class="btn" onclick="myFunc();">&#9776;</a>
+            </div>
+        </div>
+        <script>
+            function myFunc() {
+                var x = document.querySelector("#topLink");                
+                if (x.style.display === "block" ) {
+                    x.style.display = "none";
+                }
+                else {
+                    x.style.display = "block";
+                }
+            }            
+        </script>      
+
+    </body>
+</html>

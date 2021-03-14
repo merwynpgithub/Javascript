@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Input Validation</title>
+</head>
+<body>
+    <h2>JavaScript validation for empty input field</h2>
+    <form action="/" method="GET">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <button type="submit">Submit</button>        
+    </form>
+    <script>
+        // This function is added as JS practice, but button submit type takes care
+        function subbmit() {
+            var x = document.querySelector("#name").value;
+            if (x === "") {
+                alert("Name is required");
+            }
+        }
+        document.querySelector("button").addEventListener("click", subbmit)
+    </script>
+    
+</body>
+</html>

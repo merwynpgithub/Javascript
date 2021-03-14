@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes in CSS</title>
+    <style>
+        table {border-collapse: collapse;}
+        td, th {border: 1px solid black;padding: 16px;}
+        #square, #circle, #oval, #rectangle {
+            background-color: #555;
+            height: 25px;
+            width: 25px;
+        }
+        #oval, #rectangle {width: 50px;}
+        #circle, #oval {border-radius: 50%;}
+        #trapezoid {
+            border-bottom: 25px solid #555;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+        #parallelogram {
+            width: 50px;
+            height: 25px;
+            transform: skew(20deg);
+            background: #555;
+        }
+        #triangle-up {
+            border-bottom: 50px solid #555;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+        }
+        #triangle-down {
+            border-top: 50px solid #555;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+        }
+        #triangle-left {
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-right: 50px solid #555;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Shapes in CSS</h1>
+    <table>
+        <tr><th>Name</th><th>Shape</th></tr>
+        <tr><td>Square</td><td><div id="square"></div></td></tr>
+        <tr><td>Circle</td><td><div id="circle"></div></td></tr>
+        <tr><td>Oval</td><td><div id="oval"></div></td></tr>
+        <tr><td>Rectangle</td><td><div id="rectangle"></div></td></tr>
+        <tr><td>Trapezoid</td><td><div id="trapezoid"></div></td></tr>
+        <tr><td>Parallelogram</td><td><div id="parallelogram"></div></td></tr>
+        <tr><td>Triangle Up</td><td><div id="triangle-up"></div></td></tr>
+        <tr><td>Triangle Down</td><td><div id="triangle-down"></div></td></tr>
+        <tr><td>Triangle Left</td><td><div id="triangle-left"></div></td></tr>
+    </table>   
+    
+</body>
+</html>

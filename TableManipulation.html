@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table manipulation</title>
+</head>
+<body>
+    <p>Click the button to return the number of cells in the table's first row.</p>
+    <input type="text" id="search" placeholder="Search name.." autocomplete="off">
+    <table id="myTable">
+        <tr>
+          <th>Name</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Berglunds snabbkop</td>
+          <td>Sweden</td>          
+        </tr>
+        <tr>
+          <td>Island Trading</td>
+          <td>UK</td>          
+        </tr>
+        <tr>
+          <td>Koniglich Essen</td>
+          <td>Germany</td>          
+        </tr>
+        <tr>
+          <td>Laughing Bacchus Winecellars</td>
+          <td>Canada</td>          
+        </tr>
+        <tr>
+          <td>Magazzini Alimentari Riuniti</td>
+          <td>Italy</td>          
+        </tr>
+        <tr>
+          <td>North South</td>
+          <td>UK</td>          
+        </tr>
+        <tr>
+          <td>Paris specialites</td>
+          <td>France</td>          
+        </tr>
+    </table>        
+    <script>
+          function sortify() {
+            var search = document.getElementById("search");
+            var filter = search.value.toUpperCase();            
+            // var txt = document.getElementById("myTable").rows[0].cells;
+            var txt = document.getElementById("myTable").rows;
+            // console.log(txt.length);
+            var text, i, textUpper;
+            text = txt[1].cells[0];
+            // textUpper = text.textContent.toUpperCase();
+            // console.log(textUpper);
+            // console.log(textUpper);
+            for (i = 1; i < txt.length; i++) {
+              text = txt[i].cells[0];
+              textUpper = text.textContent.toUpperCase();
+              if (textUpper.indexOf(filter) > -1) {
+                txt[i].style.display = "";
+              }
+              else {
+                txt[i].style.display = "none";
+              }
+            }
+            
+          }
+          document.getElementById("search").addEventListener("keyup", sortify)
+      </script>
+    
+</body>
+</html>

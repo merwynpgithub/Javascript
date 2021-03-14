@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Data Sorting</title>
+    <style>
+        table {
+            width: 500px;
+            margin: auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        td, th {
+            border: 1px solid grey;
+        }
+        tr:nth-child(even) {
+            background-color: grey;
+        }
+        tr:hover {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th onclick="sortAge('age');">Age</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+        
+    </table>
+    <script>
+        let personData = [
+            {name: "Dylan", age: 31},
+            {name: "Rob", age: 30},
+            {name: "Chris", age: 28},
+            {name: "Mac", age: 29},
+            {name: "Gillian", age: 32}
+        ];
+        loadTableData(personData);
+        function loadTableData(personData) {
+            var tableBody = document.getElementById("tableBody");
+            let dataHTML = "";
+            for (let person of personData) {
+                dataHTML += `<tr><td>${person.name}</td><td>${person.age}</td></tr>`;
+            }
+            tableBody.innerHTML = dataHTML;
+        }
+        var switchDir = false;
+        function sortAge(columnName) {
+            switchDir = !switchDir;
+            // sortColumn(switchDir, columnName);
+            if (switchDir == true) {
+                personData.sort(function(a,b) {
+                    return a[columnName] - b[columnName]});
+            }
+            else {
+                personData.sort(function(a,b) {
+                    return b[columnName] - a[columnName]});
+            }
+            // console.log(personData);
+            // console.log(personData);
+            loadTableData(personData);
+        }
+        
+        // function sortColumn(dir, cname) {
+        //     personData = personData.sort((a, b) => {
+        //         return dir ? a[cname] - b[cname] : b[cname] - a[cname];
+        //     });
+        // }
+    </script>
+    
+</body>
+</html>
