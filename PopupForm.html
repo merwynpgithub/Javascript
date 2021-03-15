@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup form</title>
+    <style>
+        .popup {
+            position: relative;
+        }
+        .popup .fixedForm {
+            display: none;
+            position: fixed;
+            background-color: #84292956;;
+            width: 15%;
+            height: auto;
+            overflow: hidden;
+            top: 350px;
+            right: 0;
+        }
+        button {
+            position: absolute;
+            top: 500px;
+            right: 0;
+            background-color: green;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <h1>Popup Form</h1>
+        <p>Click on the button at the bottom of this page to open the login form.</p>
+        <p>Note that the button and the form is fixed -
+        they will always be positioned to the bottom of the browser window.</p>
+        <button>Open form</button>
+        <div class="fixedForm">
+            <form action="/" method="POST">                
+                <h2>Login Form</h2>
+                <div>Email</div>
+                <div><label for="user">Username</label></div>
+                <div><input type="text" id="user" placeholder="Enter Email" name="user"></div>
+                <div><label for="pwd">Password</label></div>
+                <div><input type="password" id="pwd" placeholder="Enter Password" 
+                    name="pwd"></div>        
+            </form>
+        </div>
+    </div>
+    <script>
+        var x = document.querySelector("button");
+        var y = document.querySelector(".fixedForm");
+        x.addEventListener("click", function(event) {            
+            if (x.innerHTML === "Open form") {
+                y.style.display = "block";
+                x.innerHTML = "Close";
+                x.style.backgroundColor = "red";                
+            }
+            else {
+                y.style.display = "none";
+                x.innerHTML = "Open form"
+                x.style.backgroundColor = "green";                
+            }
+        })
+    </script> 
+    
+
+    
+</body>
+</html>

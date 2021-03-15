@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+</head>
+<body>
+    <h1>To do App</h1>
+    <form id="myForm">
+        <input id="doStuff" autocomplete="off">
+        <button id="btn">Submit</button>
+    </form>
+    <ul id="myWork">
+        <li>Study HTML CSS JS<button>Delete</button></li>
+        <li>Search rental<button>Delete</button></li>
+    </ul>    
+    <script>
+        var myForm = document.querySelector("#myForm");
+        var btn = document.querySelector("#btn");
+        var doStuff = document.querySelector("#doStuff");
+        var myWork = document.querySelector("#myWork");
+        btn.addEventListener("click", function(e){
+            e.preventDefault();
+            createItem(doStuff.value);
+        });
+        function createItem(x) {
+            let ourToDo = `<li>${x}<button onclick = "deleteItem(this);">Delete</button></li>`;
+            myWork.insertAdjacentHTML("beforeend", ourToDo);
+            // para.innerHTML = x;
+        }
+        function deleteItem(toDelEl) {
+            toDelEl.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

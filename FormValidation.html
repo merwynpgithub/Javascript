@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h1>JavaScript validation for empty input field</h1>
+        <p>Try to submit the form without entering any text</p>
+        <div>
+            Name
+            <input type="text" id="ipText">
+            <button>Submit</button>
+        </div>
+        <script>
+            function subForm() {
+                var text1 = document.querySelector("#ipText").value;
+                if (text1 === "") {
+                    alert("Please submit your name");
+                }
+                else {
+                    alert("Congrats, you have now submitted");
+                }
+            }
+            document.querySelector("button").addEventListener("click", subForm)
+        </script>
+    </body>
+</html>

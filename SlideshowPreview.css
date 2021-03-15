@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;    
+}
+h1 {
+    text-align: center;
+    margin-top: 1em;
+}
+.container, .imageDisplay {
+    position: relative;
+    width: 90%;
+    margin: auto;
+}
+.slides {
+    display: none;
+}
+.pgDisp {
+    width: 200px;
+    height: auto;
+    /* float: left; */
+}
+.pgDisp:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.row {
+    float: left;
+}

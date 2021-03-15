@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Chat Window</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: Arial, Helvetica, sans-serif;}
+        .chat-container {position: relative;}
+        .chatbox {
+            position: fixed;
+            top: 70px;
+            right: 10px;
+            display: none;
+        }
+        .chat-btn, .send-chat {
+            /* position: fixed; */
+            width: 200px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .chat-btn {
+            position: fixed;
+            top: 325px;
+            right: 10px;
+            background: #b4afaf;}
+        .send-chat {background: lightgreen;}
+        label {display: block;}
+        input { height: 100px; width: 100%;}
+    </style>
+</head>
+<body>
+    <h1>Popup Chat Window</h1>
+    <p>Click on the button at the bottom of this page to open the 
+        chat form.</p>
+    <p>Note that the button and the form is fixed - they will always be 
+        positioned to the bottom of the browser window.</p>
+    <div class="chat-container">
+        <form action="/" class="chatbox">
+            <h1>Chat</h1>            
+            <label for="msg">Message</label>
+            <input type="text" placeholder="Type message..." id="msg" required>
+            <button class="send-chat" type="submit">Send</button>            
+        </form>
+        <button class="chat-btn">Chat</button>
+    </div>
+    <script>
+        var chatBtn = document.querySelector(".chat-btn");
+        var chatboxDisplay = document.querySelector(".chatbox");
+        function chatApp() {
+            if (chatBtn.innerHTML === "Chat") {
+                chatBtn.innerHTML = "Close";
+                chatboxDisplay.style.display = "block";                
+                chatBtn.style.backgroundColor = "red";
+            }
+            else {
+                chatBtn.innerHTML = "Chat";
+                chatBtn.style.backgroundColor = "";
+                document.querySelector(".chatbox").style.display = "";
+            }
+        }
+
+        chatBtn.addEventListener("click", chatApp);
+        // document.querySelector("button").addEventListener("click", chatApp)
+    </script>
+</body>
+</html>

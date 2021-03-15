@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting a List</title>
+    <style>
+        ul {
+            margin-left: 0;
+            margin-top: 10px;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;            
+        }
+    </style>
+</head>
+<body>
+    <p>Click the button to sort the list alphabetically:</p>
+    <button id="btn">Sort</button>
+    <ul id="myUl">
+        <li>Oslo</li>
+        <li>Stockholm</li>
+        <li>Helsinki</li>
+        <li>Berlin</li>
+        <li>Rome</li>
+        <li>Madrid</li>
+    </ul>
+    <script>
+        function listSort() {
+            var ul = document.getElementById("ul");
+            var li = document.getElementsByTagName("li");
+            // console.log(li[0].textContent);
+            var newli = [""];
+            for (let index = 0; index < li.length; index++) {
+                newli[index] = li[index].textContent;
+            }
+            newli.sort();
+            // console.log(newli[0]);
+            for (index = 0; index < li.length; index++) {
+                li[index].textContent = newli[index];                
+            }            
+        }
+        document.getElementById("btn").addEventListener("click", listSort);
+    </script>
+    
+</body>
+</html>

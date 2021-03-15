@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Tabs</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: Arial, Helvetica, sans-serif;}
+        .container {display: flex;}
+        .hover-tabs {flex-basis: 25%;
+            background-color: #f1f1f1;
+            border: 1px solid black;}
+        .tab-name, .text-detail {padding: 20px;}
+        .hover-text {flex-basis: 75%;
+            border: 1px solid black;}
+        .text-detail {display: none;}
+        .tab-name:hover {background-color: #ddd;}
+    </style>
+</head>
+<body>
+    <h1>Hover Tabs</h1>
+    <p>Move the mouse over a button inside the tabbed menu:</p>
+    <div class="container">
+        <div class="hover-tabs">
+            <div class="tab-name" onmouseover="showText(1);">London</div>
+            <div class="tab-name" onmouseover="showText(2);">Paris</div>
+            <div class="tab-name" onmouseover="showText(3);">Tokyo</div>
+        </div>
+        <div class="hover-text">
+            <div class="text-detail">London is the capital city of England.</div>
+            <div class="text-detail">Paris is the capital of France.</div>
+            <div class="text-detail">Tokyo is the capital of Japan</div>
+        </div>
+    </div>
+    <script>
+        var tab = document.getElementsByClassName("tab-name");
+        var text = document.getElementsByClassName("text-detail");
+        var previousText = text[0];
+        
+        function showText(n) {
+            previousText.style.display = "none";
+            text[n-1].style.display = "block";
+            previousText = text[n-1];
+        }
+    </script>
+</body>
+</html>

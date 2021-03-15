@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Pricing Table</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0%;
+            padding: 0%;
+        }
+        h1, p {
+            text-align: center;
+        }
+        .container {
+            width: 600px;
+            margin: auto;
+            display: flex;
+        }
+        .basic, .pro, .premium {
+            flex: 1;
+            margin: 5px;
+            padding: 0;
+        }
+        div {
+            padding: 1em;
+            text-align: center;
+        }
+        .basicHead, .premiumHead {
+            background-color: black;
+            color: white;
+        }
+        .proHead {
+            background-color: #4caf50;
+            color: white;
+        }
+        .price {
+            background-color: #f3f3f3;
+        }
+        .basic:hover, .pro:hover, .premium:hover {
+            box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+        }
+        @media (max-width:600px) {
+            .container {
+            display: block;            
+        }
+            .basic, .pro, .premium {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>How TO - Responsive Pricing Table</h1>
+    <p>Learn how to create a responsive pricing table with CSS.</p>
+    <div class="container">
+        <div class="basic">
+            <div class="basicHead">Basic</div>
+            <div class="price">$ 9.99/ year</div>
+            <div>10 GB Storage </div>
+            <div>10 Emails</div>
+            <div>10 Domains</div>
+            <div>1GB Bandwidth</div>
+        </div>
+        <div class="pro">
+            <div class="proHead">Pro</div>
+            <div class="price">$ 9.99/ year</div>
+            <div >10 GB Storage </div>
+            <div>10 Emails</div>
+            <div>10 Domains</div>
+            <div>1GB Bandwidth</div>
+        </div>
+        <div class="premium">
+            <div class="premiumHead">Premium</div>
+            <div class="price">$ 9.99/ year</div>
+            <div>10 GB Storage </div>
+            <div>10 Emails</div>
+            <div>10 Domains</div>
+            <div>1GB Bandwidth</div>
+        </div>
+    </div>
+    
+</body>
+</html>

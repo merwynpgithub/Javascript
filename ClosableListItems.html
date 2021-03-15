@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closable List Items</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: Arial, Helvetica, sans-serif;}
+        .closable {position: relative;}
+        .closable div {
+            position: relative;
+            font-size: 1.5em;
+            background: #e7e5e9;
+            height: 72px;
+            display: flex;
+            align-items: center;
+        }
+        .closable div:hover {background: #b6b4b8;}
+        div .cross {
+            position: absolute;
+            right: 0px;
+            padding: 24px;
+        }
+        div .cross:hover {background: #8d8c8f;}
+    </style>
+</head>
+<body>
+    <h1>Closable List Items</h1>
+    <div class="closable">
+        <div>Adele</div>
+        <div class="close-div">Agnes<div class="cross">&times</div></div>
+        <div class="close-div">Cindy<div class="cross">&times</div></div>
+        <div class="close-div">Billy<div class="cross">&times</div></div>
+        <div class="close-div">Bob<div class="cross">&times</div></div>
+        <div class="close-div">Calvin<div class="cross">&times</div></div>
+        <div class="close-div">Christina<div class="cross">&times</div></div>
+    </div>
+    <script src="js/ClosableListItems.js"></script>
+    
+</body>
+</html>

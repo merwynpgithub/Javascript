@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text Over an Image</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            div {
+                width: 100%;
+                position: relative;
+            }
+            #topLeft {
+                position: absolute;
+                top: 10px;
+                left: 25px;
+            }
+            #topRight {
+                position: absolute;
+                top: 10px;
+                right: 25px;
+            }
+            #center {
+                position: absolute;
+                top: 200px;
+                left: 650px;
+            }
+            #bottomLeft {
+                position: absolute;
+                bottom: 25px;
+                left: 25px;
+            } 
+            #bottomRight {
+                position: absolute;
+                bottom: 10px;
+                right: 25px;
+            }         
+            img {                
+                opacity: 0.7;
+                width: 100%;
+                height: auto;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div>                              
+                <img src="img_snow_wide.jpg">
+                <h2 id="topLeft">Top Left</h2> 
+                <h2 id="topRight">Top Right</h2>
+                <h2 id="center">Centered</h2> 
+                <h2 id="bottomLeft">Bottom Left</h2> 
+                <h2 id="bottomRight">Bottom Right</h2>
+            </div>  
+        </div>
+        
+
+    </body>
+</html>

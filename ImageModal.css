@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.outer-container {
+    position: relative;
+}
+.container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+}
+#modal {
+    width: 350px;
+    height: auto;    
+}
+#modal:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.modal-container {
+    position: absolute;
+    top: 75px;
+    left: 50px;
+    display: none;
+}
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 1.5em;
+    display: none;
+}

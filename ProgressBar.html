@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            margin-bottom: 20px;
+        }
+        .status {
+            width: 5%;
+            height: 25px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Progress bar</h1>
+    <div class="bar">
+        <div class="status" id="statCheck"></div>
+    </div>
+    <button>Check Status</button>
+    <script>
+        var statcheck = document.getElementById("statCheck");
+        var progBarStat = 5, progressStat;
+        function showStatus(){
+            progressStat = setInterval(barStatus, 100);
+        }
+        function barStatus() {
+            progBarStat += 5;
+            statcheck.style.width = progBarStat + "%";
+            if (progBarStat == 100) {
+                clearInterval(progressStat);
+            }
+        }
+        document.querySelector("button").addEventListener("click", showStatus);
+    </script>
+    
+</body>
+</html>

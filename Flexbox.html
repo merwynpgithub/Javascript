@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        #myForm {
+            position: relative;
+            box-sizing: border-box;
+            width: 65%;
+            /* height: 100px; */
+            margin: 0 auto;
+            background-color: burlywood;
+            border: 1px solid black;            
+        }        
+        .form1 {
+            display: flex;
+            margin: 10px;
+        }
+        input.flexing {
+            flex: 1;
+        }
+        .container {
+            position: relative;
+            box-sizing: border-box;
+            padding: 10px;
+            /* width: 900px; */
+            /* height: 100px; */
+            margin: 40px auto;
+            background-color: grey;
+            border: 1px solid black;
+            
+        }
+        .one {
+            background-color: rgb(14, 187, 37);
+            flex: 1;
+            /* width: 30%; */
+            /* order: 2; */
+        } 
+        .two {
+            background-color: fuchsia;
+            flex: 1;
+            /* width: 30%; */
+            /* order: 3; */
+        } 
+        .three {
+            background-color:yellowgreen;
+            flex: 1;
+            /* width: 30%; */
+            /* order: 1; */
+        }
+        @media (min-width: 900px) {
+            .container {
+                display: flex;
+                align-items: stretch;
+                /* justify-content: space-between; */
+            }
+        }
+        #centre {
+            box-sizing: border-box;
+            width: 300px;
+            height: 55px;
+            margin: 40px auto;
+            background-color: teal;
+            display: flex;
+        }
+        #c1 {
+            color: yellow;
+            font-size: 24px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="myForm">
+        <form action="/">
+            <div class="form1">
+                <label for="name">Name</label>
+                <input type="text" class="flexing" id="name">
+            </div>
+            <div class="form1">
+                <label for="job">Job</label>
+                <input type="text" class="flexing" id="job">
+            </div>            
+        </form>
+    </div>
+    <div class="container">
+        <div class="one">
+            Thomas Edward Patrick Brady Jr. (born August 3, 1977) is an American 
+            football quarterback for the Tampa Bay Buccaneers of the National Football 
+            League (NFL). He spent the first 20 seasons of his career with the New England
+            Patriots, where he was a core contributor of the franchise's dynasty from 2001
+            to 2019. Brady is considered by many sports writers, commentators, and players 
+            to be the greatest quarterback of all time
+        </div>
+        <div class="two">
+            After playing college football at Michigan, Brady was selected 199th 
+            overall by the Patriots in the sixth round of the 2000 NFL Draft, earning
+             him a reputation as the NFL's biggest steal.[7][8][9] He became the 
+             starting quarterback during his second season, which saw the Patriots 
+             win their first Super Bowl title in Super Bowl XXXVI. As the team's 
+             primary starter for 18 seasons,[a] Brady led the Patriots to a total of 
+             17 division titles (including 11 consecutive from 2009 to 2019)
+        </div>
+        <div class="three">
+            13 AFC Championship Games (including eight consecutive from 2011 to 2018), 
+            nine Super Bowl appearances, and six Super Bowl titles, all NFL records for a 
+            player and franchise. He joined the Buccaneers in 2020, where he led them to 
+            Super Bowl LV in his first season. His Super Bowl appearance with Tampa Bay 
+            will be his record 10th individually.
+        </div>
+    </div>
+    <div id="centre">
+        <div id="c1">Center me</div>
+    </div>
+    
+    
+</body>
+</html>

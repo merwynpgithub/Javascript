@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    position: relative;    
+    width: 321px;
+    height: 321px;
+    background-color: rgb(120, 240, 240);
+}
+#image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#first {
+    position: absolute;
+    top: 0%;
+    left: 0%;/*for slide bottom: 100%*/
+    width: 100%;
+    height: 100%;
+    background-color: rgb(226, 43, 165);
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s;
+    display: flex;
+}
+#first > p {
+    color: white;
+    font-size: 2em;
+    margin: auto;
+}
+.container:hover #first {    
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    transform: scale(1);/*zoom*/
+    opacity: 1;
+}

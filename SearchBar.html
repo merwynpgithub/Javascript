@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Bar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            /* body {
+                overflow-x: hidden;
+            } */
+            div {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                /* height: 55px; */
+                background-color: rgba(210, 210, 210, 0.5);
+                margin: 0%;
+            }
+            div a {
+                float: left;
+                text-decoration: none;
+                font-size: 1.5em;
+                color: black;
+                background-color: rgba(200, 200, 200, 0.945);
+                padding: 14px 16px;
+                text-align: center;              
+            }
+            div a:hover {
+                background-color: black;
+                color: white;
+            }
+            div #searchBar {
+                width: 250px;
+                float: right;
+                padding-top: 10px;
+                background-color: rgba(210, 210, 210, 0.5);
+            }
+            input {
+                padding-top: 15px;
+                margin-right: 10px;
+                border: 1px solid black;    
+                border-radius: 10px;            
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Search Bar</h1>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <div id="searchBar">
+                <input type="text" placeholder="Search here..">
+                <button>Search</button>
+            </div>
+
+        </div>
+        
+
+    </body>
+</html>

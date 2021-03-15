@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stop Watch</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	  div {
+	  	text-align: center;
+	  }
+	  h3 {
+	 	font-size: 32px;
+	  }
+	  button {
+	    font-size: 24px;
+	  }
+	  #demo {
+	  	font-size: 24px;
+	  	text-align: center;
+	  	text-transform: uppercase;
+	  	color: red;
+	  	display: none;
+	  }
+	  h3 {
+		display: none;
+	  }
+	</style>
+</head>
+<body>
+	<div>
+	  <h3>Time in Seconds left: <span id="timeLeft"></span></h3>
+	  <button id="startTimer">Countdown Timer</button>
+	</div>
+	<p id="demo"> Lorem ipsum</p>
+	
+	<script>
+	  function countDown(event) {
+	  	var timeRem = 5; //add the time in seconds here
+	  	var timeDisplay = document.querySelector('#timeLeft');
+	  	var text = document.querySelector('#startTimer');
+		  var x = document.querySelector('#demo');
+		  var oldTimerId;
+	  	
+	  	// var	myInterval = -1;
+	  	// if (myInterval == -1) {
+		if (text.innerHTML === "Countdown Timer") {
+			  text.innerHTML = "Pause Countdown Timer";
+			  var header = document.querySelector('h3');
+			  header.style.display = 'block';
+	  		oldTimerId = setInterval(function() {
+				if (timeRem <= 0) {
+	  				text.style.display = 'none';
+					  x.style.display = 'block';
+					  console.log("49: " + oldTimerId);
+	  				clearInterval(oldTimerId);
+				}
+	  		timeDisplay.innerHTML = timeRem;
+	  		timeRem --;
+		  }, 1000);
+		} else {
+			text.innerHTML = "Countdown Timer";
+			var header = document.querySelector('h3');
+			  header.style.display = 'none';
+			console.log("58: " + oldTimerId);
+	  		clearInterval(1);
+		}
+	  	// }
+		// 	  	else {
+		// 	  		text.innerHTML = "Start";
+		// 	  		clearInterval(myInterval);
+		// 	  		myInterval = -1;
+		// 	  	}
+	  }
+	  
+	  document.querySelector('#startTimer').addEventListener('click', countDown)
+	</script>
+
+</body>
+</html>
