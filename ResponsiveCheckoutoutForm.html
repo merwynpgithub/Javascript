@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Checkout Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .cart {
+            position: relative;
+        }
+
+        .cart span {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .cart p {
+            position: relative;
+            left: 90%;
+        }
+
+        .cart .total {
+            position: relative;
+            top: -40px;
+        }
+
+        button {
+            margin-top: 2rem;
+            width: 90%;
+        }
+
+        input {
+            width: 90%;
+        }
+
+        @media (min-width: 750px) {
+            .checkout-container {
+                display: flex;
+            }
+
+            .cart {
+                flex: 1;
+                order: 2;
+            }
+
+            .cart span {
+                top: 24px;
+            }
+
+            .cart p {
+                left: 75%;
+            }
+
+            .payment {
+                flex: 4;
+                order: 1;
+                display: flex;
+            }
+
+            .payment-card,
+            .payment-info {
+                flex: 1;
+                padding: 1%;
+            }
+
+            button {
+                width: 75%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Responsive Checkout Form</h1>
+    <form method="GET" action="/">
+        <div class="checkout-container">
+            <div class="cart">
+                <h2>Cart</h2>
+                <span class="fa fa-shopping-cart">4</span>
+                <!-- <span class="cartItemQty">4</span> -->
+                <p class="product">Product 1</p>
+                <p class="product">Product 2</p>
+                <p class="product">Product 3</p>
+                <p class="product">Product 4</p>
+                <hr>
+                <h2>Total</h2>
+                <p class="total">$35</p>
+            </div>
+
+            <div class="payment">
+                <div class="payment-card">
+                    <h2>Payment Info</h2>
+                    <p><span class="fa fa-user"></span>Name on Card</p>
+                    <input type="text" placeholder="Enter name" required>
+                    <p><span class="fa fa-envelope"></span>Credit Card No</p>
+                    <input type="number" placeholder=1111111111111111>
+                    <p><span class="fa fa-address-card-o"></span>Exp Month</p>
+                    <input type="number" placeholder="03">
+                    <p><span class="fa fa-institution"></span>CVV</p>
+                    <input type="number" placeholder="111">
+                    <p><span class="fa fa-institution"></span>Exp Year</p>
+                    <input type="number" placeholder="2023">
+                </div>
+
+                <div class="payment-info">
+                    <h2>Billing Address</h2>
+                    <p><span class="fa fa-user"></span>Full Name</p>
+                    <input type="text" placeholder="Enter name">
+                    <p><span class="fa fa-envelope"></span>Email</p>
+                    <input type="text" placeholder="xxx@xxx.com">
+                    <p><span class="fa fa-address-card-o"></span>Address</p>
+                    <input type="text" placeholder="123 Street">
+                    <p><span class="fa fa-institution"></span>City</p>
+                    <input type="text" placeholder="NY">
+                </div>
+            </div>
+        </div>
+        <button type="submit">Continue to checkout</button>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Wrap Practice</title>
+    <style>
+
+        .outer {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1rem;
+            width: 85%;
+            margin: auto;
+            max-width: 1400px;
+            text-align: center;
+        }
+
+        .inner-75 {
+            flex: 3 0 300px;
+            /* background: lightskyblue; */
+        }
+
+        .inner-25 {
+            flex: 1 0 200px;
+            /* background: lightgreen; */
+        }
+
+        .inner-75,
+        .inner-25 {
+            /* height: 300px; */
+            max-height: 600px;
+            margin: 1rem;
+        }
+        .inner-50 {
+            flex: 1 0 auto;
+            height: 200px;
+            background: lightsalmon;
+            margin: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flexbox Practice</h1>
+    <div class="outer">
+        <div class="inner-75">
+            <div class="outer">
+                <div class="inner-50">
+                    <p>Billing Information</p>
+                    <p>Name</p>
+                    <p>Address</p>
+                    <p>Zip</p>
+                    <p>Phone</p>
+                </div>
+                <div class="inner-50">
+                    <p>Shipping Information</p>
+                    <p>Name</p>
+                    <p>Address</p>
+                    <p>Zip</p>
+                    <p>Phone</p>
+                </div>
+            </div>
+        </div>
+        <div class="inner-25">
+            <div class="outer">
+                <div class="inner-50">
+                    <p>Eggs</p>
+                    <p>Scissors</p>
+                    <p>Butter</p>
+                    <p>Knife</p>
+                    <hr>
+                    <p>Total</p>
+                </div>
+                <div class="inner-50">
+                    <p>$25</p>
+                    <p>$5</p>
+                    <p>$10</p>
+                    <p>$35</p>
+                    <hr>
+                    <p>$70</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
