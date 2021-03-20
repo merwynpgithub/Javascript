@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Login Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #btn-form {
+            padding: 10px;
+            background: lightgreen;
+            border: none;
+            cursor: pointer;
+        }
+
+        #btn-form:focus {
+            outline: none;
+        }
+
+        #logDiv {
+            position: relative;
+        }
+
+        #absolute-logForm {
+            position: absolute;
+            top: 50px;
+            left: 25%;
+            width: 350px;
+            max-height: 450px;
+            background: white;
+            /* display: none; */
+            padding: 10px;
+        }
+
+        #close-form {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #close-form:hover {
+            color: red;
+        }
+
+        img {
+            margin-left: 100px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        #login-formBtn {
+            width: 100%;
+            padding: 10px;
+            background: green;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        #absolute-logForm .input {
+            width: 100%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <div id="logDiv">
+        <h1>Modal Login Form</h1>
+        <button id="btn-form">Login</button>
+        <div id="absolute-logForm">
+            <div id="close-form">&times</div>
+            <form method="GET" action="/">
+                <img src="photoId1.jpg" alt="Photo Image">
+                <p>Username</p>
+                <p><input type="text" required class="input"></p>
+                <p>Password</p>
+                <p><input type="password" required class="input"></p>
+                <button id="login-formBtn" type="submit">Login</button>
+                <p><input type="checkbox">Remember me</p>
+            </form>
+        </div>
+    </div>
+    <script>
+        var formDisplay = document.getElementById("btn-form");
+        var formDiv = document.getElementById("absolute-logForm");
+        var body = document.body;
+        formDiv.style.display = "none";
+        function loginForm() {
+
+            if (formDiv.style.display == "none") {
+                formDiv.style.display = "block";
+                body.style.backgroundColor = "grey";
+
+            }
+            else {
+                formDiv.style.display = "none";
+                body.style.backgroundColor = "";
+            }
+        }
+        formDisplay.addEventListener("click", loginForm);
+        $("#close-form").click(function () {
+            $(this).parent().hide();
+            body.style.backgroundColor = "";
+        });
+
+    </script>
+</body>
+
+</html>

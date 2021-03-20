@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Tabs Using jQuery</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: Arial, Helvetica, sans-serif;}
+        .container {
+            width: 80%;
+            margin: auto;
+            position: relative;
+            display: flex;
+        }
+        .capital {
+            background-color: lightblue;
+            width: 30%;
+        }
+        .country {
+            width: 70%;
+            background-color: lightgreen;
+        }
+        .city {padding: 1rem;}
+        .city:hover { background-color: black;color: white;}
+        .city-info {
+            display: none; 
+            position: absolute;
+            top: 5rem;
+            left: 32%;
+        }
+        .visible {display: block;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <h1>Hover Tabs using jQuery</h1>
+    <div class="container">
+        <div class="capital">
+            <h2>Capital</h2>
+            <div class="city">London</div>
+            <div class="city-info">London is the capital of England</div>
+            <div class="city">Paris</div>
+            <div class="city-info">Paris is the capital of France</div>
+            <div class="city">Tokyo</div>
+            <div class="city-info">Tokyo is the capital of Japan</div>
+        </div>
+        <div class="country">
+            <h2>Country</h2>
+        </div>
+        
+    </div>
+    <script src="HoverTabsUsingjQuery.js"></script>
+</body>
+</html>
