@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="js/Countries.js" defer></script>
+    <script src="js/Autocomplete.js" defer></script>
+    <style>
+        * {box-sizing: border-box;}
+        input {width: 25%;}
+        #divs {
+            width: 30%;
+            height: 300px;
+            overflow: auto;
+            border: 1px solid #f1f1f1;
+        }
+        ul {margin-left: 0; padding: 0;}
+        li {
+            list-style-type: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        li:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+        li:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Autocomplete</h1>
+    <form action="/" method="GET">
+        <input id="myInp" type="text" autocomplete="off" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="divs">Hi</div>
+    
+    <script src="js/AutocompletejQuery.js"></script>
+</body>
+</html>
