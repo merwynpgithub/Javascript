@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Price Chart</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: hsl(0, 0%, 23%);
+            color: hsl(0, 7%, 86%);
+            width: 100%;
+            height: 6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header>h1 {
+            font-size: 3rem;
+        }
+
+        .container {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            padding: 3rem;
+        }
+
+        #crypto {
+            /* width: 60%; */
+            max-width: 800px;
+            margin: auto;
+            background-color: rgb(53, 52, 52);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #time {
+            padding: 2rem;
+            margin: 1rem;
+            content: "";
+        }
+
+        table th,
+        table td {
+            padding: 2rem;
+            margin: 1rem;
+        }
+
+        @media only screen and (max-width: 680px) {
+            #crypto {
+                width: 100%;
+            }
+
+            table th,
+            table td {
+                padding: 1rem;
+                margin: 0.5rem;
+                font-size: 1.5rem;
+            }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bitcoin Price</h1>
+    </header>
+    <section class="container">
+        <div id="crypto">
+            <div id="time"></div>
+            <div id="bitcoin-table">
+
+            </div>
+        </div>
+    </section>
+    <script>
+        async function myNewRequest() {
+            try {
+                //adfs;
+                const response = await fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
+                const myNewData = await response.json();
+
+                const time = document.getElementById("time");
+                const currentTime = (new Date).toLocaleTimeString();
+                time.innerHTML = currentTime + " EST";
+
+
+                const bitTable = document.getElementById("bitcoin-table");
+
+                const symbol = Object.values(myNewData.bpi)
+                    
+                    /* console.log(symbol); */
+
+                const header = Object.keys(myNewData.bpi)
+                    .map(data => `
+                    <th>${data}</th>
+                    `).join("");
+
+                const price = Object.values(myNewData.bpi)
+                    .map(data => `
+                    <td>${data.rate_float.toFixed(2)}</td>
+                    `).join("");
+
+                bitTable.innerHTML = `
+                <table>
+                <tr>${header}</tr>
+                <tr>${price}</tr>
+                </table>`;
+
+
+            }
+            catch (e) {
+                console.log("There is an error in fetching data from the Coindesk API");
+            }
+        }
+
+        /* myNewRequest(); */
+
+        setInterval(myNewRequest, 1000);
+    </script>
+</body>
+
+</html>
