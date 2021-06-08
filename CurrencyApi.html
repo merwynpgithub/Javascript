@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Api</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: hsl(0, 0%, 23%);
+            color: hsl(0, 7%, 86%);
+            width: 100%;
+            height: 6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header>h1 {
+            font-size: 3rem;
+        }
+
+        .container {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            padding: 1.5rem;
+        }
+
+        #currency {
+            max-width: 800px;
+            margin: auto;
+            background-color: rgb(53, 52, 52);
+            min-height: 50vh;
+            display: flex;
+            justify-content: space-between;
+            /* align-items: center; */
+        }
+
+        #from select,
+        #to select {
+            font-size: 0.8rem;
+            padding: 0 1.5rem;
+            /* margin-left: 4rem; */
+        }
+
+        #conversion {
+            background-color: rgb(53, 52, 52);
+            max-width: 800px;
+            margin: auto;
+            margin-top: 2rem;
+            min-height: 35vh;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Currency Converting App</h1>
+    </header>
+    <section class="container">
+        <div id="currency">
+            <div class="ref">
+                <h3>Select Currency</h3>
+                <div id="from"></div>
+            </div>
+            <div>
+                <h3>&rarr;</h3>
+            </div>
+            <div class="target">
+                <h3>Select Currency</h3>
+                <div id="to"></div>
+            </div>
+        </div>
+        <div id="conversion"></div>
+    </section>
+
+    <script>
+        async function myNewRequest() {
+            try {
+                const response = await fetch("https://api.exchangerate.host/symbols");
+                const myData = await response.json();
+                getCurrencyList(myData.symbols);
+
+            }
+            catch (e) {
+                console.log("There is an error in fetching data from the Coindesk API");
+            }
+        }
+
+        myNewRequest();
+
+        let currencyA;
+        let currencyB;
+
+        function getCurrencyList(currency) {
+            document.getElementById("from").innerHTML = `
+            <select onchange ="storeA(this.value)">
+                <option>Choose a Currency</option>
+                ${Object.values(currency).map(function (name) {
+                return `<option>${name.code} ${name.description}</option>`
+            }).join("")};
+            </select>
+            `;
+
+            document.getElementById("to").innerHTML = `
+            <select onchange ="storeB(this.value)">
+                <option>Choose a Currency</option>
+                ${Object.values(currency).map(function (name) {
+                return `<option>${name.code} ${name.description}</option>`
+            }).join("")};
+            </select>
+            `;
+
+
+        }
+
+        function storeA(a) {
+            currencyA = a;
+        }
+
+        async function storeB(b) {
+            try {
+                currencyB = b;
+
+                const response2 = await fetch("https://api.exchangerate.host/convert?from=" + currencyA.slice(0,3) + "&to=" + currencyB.slice(0,3));
+                const result = await response2.json();
+                console.log(result);
+
+                document.getElementById("conversion").innerHTML = `
+                1 ${currencyA.slice(3)} is ${result.result} ${currencyB.slice(3)}
+                `;
+            }
+            catch (e) {
+                console.log("There is an error in fetching data from the Coindesk API");
+            }
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
